@@ -422,7 +422,7 @@ section p {
         input {
           padding: 0.6rem 4.5rem 0.6rem 1rem;
           border-radius: 50px;
-          border: 1px solid #ccc;
+          border: 1px solid var(--clr-neutral-200);
           outline: none;
         }
 
@@ -435,7 +435,7 @@ section p {
           border-radius: 999px;
           border: none;
           background: var(--clr-accent);
-          color: white;
+          color: var(--clr-neutral-100);
           cursor: pointer;
           transition: 0.2s ease-in;
 
@@ -489,7 +489,7 @@ section p {
 
 /* Card */
 .plant-card {
-  background: #fff;
+  background: var(--clr-neutral-100);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
   display: flex;
   flex-direction: column;
@@ -514,7 +514,7 @@ section p {
   font-size: 0.65rem;
   padding: 0.25rem 0.55rem;
   border-radius: 999px;
-  color: #fff;
+  color: var(--clr-neutral-100);
   font-weight: 600;
   text-transform: uppercase;
 }
@@ -611,7 +611,7 @@ section p {
 
 .author-info time {
   font-size: 0.7rem;
-  color: #777;
+  color: var(--clr-neutral-300);
 }
 
 
