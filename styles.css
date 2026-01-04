@@ -242,13 +242,17 @@ https://www.youtube.com/watch?v=cf-J4ffMBfo
 
 
 /*** My own styles ***/
+
+/*** =========================
+    GLOBAL / NAVIGATION
+========================= ***/
 .navbar {
   background-color: var(--clr-neutral-100);
 }
 
-/*** Layout container ***/
 .nav-container {
   max-width: 1200px;
+  /* Keeps navbar aligned with main content width */
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -276,6 +280,7 @@ https://www.youtube.com/watch?v=cf-J4ffMBfo
     line-height: 1.1;
     letter-spacing: 0.03em;
     max-width: 6ch;
+    /* Forces logo text to wrap nicely */
   }
 
   &:hover {
@@ -309,7 +314,7 @@ https://www.youtube.com/watch?v=cf-J4ffMBfo
   }
 }
 
-/* ===== Menu toggle button ===== */
+/* Mobile menu toggle button */
 .menu-toggle {
   background: none;
   border: none;
@@ -327,15 +332,20 @@ https://www.youtube.com/watch?v=cf-J4ffMBfo
   }
 }
 
-
+/*** =========================
+    IMAGE GRID
+========================= ***/
 
 .image-grid {
   display: grid;
+
+  /* Desktop layout */
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(2, 250px);
   grid-template-areas:
     "a a b c d d"
     "a a e e f f";
+
   background: var(--clr-neutral-100);
   box-shadow: var(--border-shadow);
   padding: 1rem;
@@ -374,9 +384,17 @@ https://www.youtube.com/watch?v=cf-J4ffMBfo
   }
 }
 
+/*** =========================
+    SECTION HEADERS
+========================= ***/
 
 section {
   margin: 3rem auto;
+
+  p {
+    margin: 0 auto;
+    max-width: 550px;
+  }
 }
 
 .plants-showcase {
@@ -391,11 +409,9 @@ section {
 
 }
 
-section p {
-  margin: 0 auto;
-  max-width: 550px;
-}
-
+/*** =========================
+    NEWSLETTER SECTION
+========================= ***/
 
 .newsletter {
   background: var(--clr-neutral-100);
@@ -417,6 +433,7 @@ section p {
 
       .newsletter-form {
         position: relative;
+        /* Required for absolute-positioned button */
         display: inline-block;
 
         input {
@@ -428,6 +445,7 @@ section p {
 
         button {
           position: absolute;
+          /* Button sits inside input */
           right: 4px;
           top: 50%;
           transform: translateY(-50%);
@@ -451,6 +469,7 @@ section p {
   }
 }
 
+/* Circular SVG container */
 .svg-image {
   background: var(--clr-accent);
   width: 200px;
@@ -466,20 +485,20 @@ section p {
   height: auto;
 }
 
+/*** =========================
+    PLANT CARDS GRID
+========================= ***/
 
-
-/* Section */
 .plants-section {
   padding: 3rem 2rem;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    font-size: 1.8rem;
+  }
 }
 
-.plants-section h2 {
-  text-align: center;
-  margin-bottom: 2.5rem;
-  font-size: 1.8rem;
-}
-
-/* Grid */
 .plants-grid {
   display: grid;
   grid-template-columns: repeat(4, 260px);
@@ -487,7 +506,6 @@ section p {
   justify-content: center;
 }
 
-/* Card */
 .plant-card {
   background: var(--clr-neutral-100);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
@@ -495,7 +513,6 @@ section p {
   flex-direction: column;
 }
 
-/* Image */
 .plant-card img {
   width: 100%;
   height: 180px;
@@ -552,12 +569,11 @@ section p {
   background: var(--clr-easy);
 }
 
-/* Content */
 .plant-content {
   padding: 0.75rem 1rem 1rem;
   display: flex;
   flex-direction: column;
-  flex: 1;
+  flex: 1; /* Allows author to stick to bottom */
   gap: 0.5rem;
 
   h3 {
@@ -575,45 +591,47 @@ section p {
   }
 }
 
-
 .author {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  margin-top: auto;
+  margin-top: auto; /* Author always at bottom */
 
   .avatar {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      object-fit: cover;
-      flex-shrink: 0;
-      border: 2px solid var(--clr-primary-dark);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 2px solid var(--clr-primary-dark);
+  }
+
+  .author-info {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+
+    .author-name {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--clr-accent);
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
+
+    time {
+      font-size: 0.7rem;
+      color: var(--clr-neutral-300);
+    }
+  }
 }
 
-.author 
-
-.author-info {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.1;
-}
-
-.author-name {
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--clr-accent);
-  text-decoration: none;
-}
-
-
-
-.author-info time {
-  font-size: 0.7rem;
-  color: var(--clr-neutral-300);
-}
-
+/*** =========================
+    PREVIOUS PLANTS SECTION
+========================= ***/
 
 .previous-plants {
   width: 100%;
@@ -651,7 +669,7 @@ section p {
       padding: 0.6rem 1.4rem;
       border-radius: 50px;
       cursor: pointer;
-      align-self: flex-end;
+      align-self: flex-end; /* Desktop alignment */
       transition: 0.2s ease-in;
 
       &:hover {
@@ -671,7 +689,9 @@ section p {
   border: 1px solid var(--clr-accent);
 }
 
-
+/*** =========================
+    FOOTER
+========================= ***/
 
 .site-footer {
   background: var(--clr-accent);
@@ -682,6 +702,7 @@ section p {
 .footer-container {
   width: 100%;
   max-width: 1200px;
+  /* Aligns footer with site content */
   margin: 0 auto;
   padding: 3rem 2rem;
 
@@ -737,17 +758,11 @@ section p {
   }
 }
 
+/*** =========================
+    RESPONSIVE
+========================= ***/
 
-
-
-
-
-
-
-
-
-
-/* ===== Mobile styles ===== */
+/* Tablet */
 @media (max-width: 1024px) {
   .nav-container {
     margin: 0 1rem;
@@ -757,6 +772,7 @@ section p {
     grid-template-columns: repeat(3, 260px);
   }
 
+  /* Simplified image grid */
   .image-grid {
     margin: 3rem 1rem;
     grid-template-columns: repeat(3, 1fr);
@@ -767,6 +783,7 @@ section p {
   }
 }
 
+/* Mobile */
 @media (max-width: 768px) {
   .nav-links {
     position: absolute;
@@ -802,6 +819,7 @@ section p {
 
   .newsletter-inner {
     flex-direction: column-reverse;
+    /* SVG above text */
     text-align: center;
     gap: 2rem;
   }
@@ -815,6 +833,7 @@ section p {
 
       .btn {
         align-self: center;
+        /* Override desktop alignment */
       }
     }
   }
@@ -828,6 +847,7 @@ section p {
     display: none;
   }
 
+  /* Mobile stacked grid */
   .image-grid {
     margin: 3rem 1rem;
     grid-template-columns: repeat(2, 1fr);
